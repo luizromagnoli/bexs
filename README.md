@@ -18,7 +18,7 @@ os dois pontos, além do custo desse trajeto, no formato "pontoA - pontoC - pont
 
 2. Interface Rest - dois endpoints são expostos para consumo via HTTP, um para calcular o melhor trajeto (com saída
 igual à da interface via console)
-e outro para registrar uma nova rota. mais detalhes abaixo na seção "Inteface Rest".
+e outro para registrar uma nova rota. Mais detalhes abaixo na seção "Inteface Rest".
 
 <sup>1</sup> https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 
@@ -43,15 +43,11 @@ Além disso, foi necessário a biblioteca **jUnit 4** para execução de testes 
 <sup>3</sup>https://javalin.io/
 
 ##### Design - Estrutura de pacotes e arquivos
-O design da aplicação é inspirado no padrão de arquitetura MVC e possui macro packages principais:
-1. application: encapsula as classes de setup de aplicação e de interface com o usuário. Contém a classe principal (com
+O design da aplicação é inspirado no padrão de arquitetura MVC e possui três packages principais:
+1. application: encapsula as classes de setup da aplicação e de interface com o usuário. Contém a classe principal (com
 o método Main e o setup da interface Rest), e as classes de Controller do MVC;
 2. domain: agrupa as regras de negócio e as classes que representam as entidades da aplicação;
-3. resources: contém as classes de acesso a recusrsos externos (arquivos, bancos de dados, outros serviços etc).
-
-##### Requisitos de negócio
-Não ficou claro o comportamento da aplicação após do registro de novas rotas. Considerei que após a inserção de uma nova
-rota, a aplicação recalcula todas as rotas, já que é possível que alguma rota fique melhor depois disso. Em caso de rotas iguais
+3. resources: contém as classes de acesso a recursos externos (arquivos, bancos de dados, outros serviços etc).
 
 ## Como executar
 Existem algumas maneiras possíveis para a execução da aplicação:
@@ -66,8 +62,8 @@ não é recomendado pois o console fica poluído com os outputs do gradle em mei
 * Gradle + Java
 
 Essa maneira separa o ```build``` da aplicação de sua execução. Para executar o build, deve-se executar:
-```./gradlew build ```. Será gerado um jar na pasta ```build/libs```. Após isso, basta executar
-```java -Dport=8080 -jar build/libs/ebanx-1.0.jar input-routes.csv input-routes.csv``` para a aplicação iniciar.
+```./gradlew build ```. Será gerado o jar *ebanx-1.0.jar* na pasta ```build/libs```. Após isso, basta executar
+```java -Dport=8080 -jar build/libs/ebanx-1.0.jar input-routes.csv``` para a aplicação iniciar.
 
 **Obs:** O parâmetro *port* é opcional e se não informado, usa a porta 7000.
 
@@ -81,7 +77,6 @@ Exemplo de chamada:
 
 * **POST /register-route**  
 Recebe no body uma string no mesmo formato do arquivo CSV de entrada (pontoA,pontoB,custo) e registra essa nova rota para
-uso nas próximas consultas em ambas as interfaces. Aceita um parâmetro adicional *override-existing-route* para indicar
-se essa rota deve substituir a rota existente caso a origem e destino coincidam. Se não informado, é considerada como *false*.  
+uso nas próximas consultas em ambas as interfaces.  
 Exemplo de chamada:  
-```curl -X POST 'http://localhost:7000/register-route?override-existing-route=true' -d 'GRU,SCL,1'```
+```curl -X POST 'http://localhost:7000/register-route' -d 'GRU,SCL,1'```
