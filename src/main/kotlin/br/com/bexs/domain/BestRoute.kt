@@ -1,9 +1,9 @@
-package br.com.ebanx.domain
+package br.com.bexs.domain
 
-import br.com.ebanx.domain.entities.Path
-import br.com.ebanx.domain.entities.Place
-import br.com.ebanx.domain.entities.ShortestPath
-import br.com.ebanx.domain.exception.NoPathException
+import br.com.bexs.domain.entities.Path
+import br.com.bexs.domain.entities.Place
+import br.com.bexs.domain.entities.ShortestPath
+import br.com.bexs.domain.exception.NoPathException
 import java.util.*
 
 class BestRoute(paths: List<Path>) {

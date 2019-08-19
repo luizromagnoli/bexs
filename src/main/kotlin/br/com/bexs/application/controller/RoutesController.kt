@@ -1,12 +1,12 @@
-package br.com.ebanx.application.controller
+package br.com.bexs.application.controller
 
-import br.com.ebanx.domain.BestRoute
-import br.com.ebanx.resources.InputParser
-import br.com.ebanx.domain.RoutesService
-import br.com.ebanx.domain.entities.ShortestPath
-import br.com.ebanx.domain.entities.Place
-import br.com.ebanx.domain.exception.NoPathException
-import br.com.ebanx.domain.exception.RouteAlreadyExistsException
+import br.com.bexs.domain.BestRoute
+import br.com.bexs.resources.InputParser
+import br.com.bexs.domain.RoutesService
+import br.com.bexs.domain.entities.ShortestPath
+import br.com.bexs.domain.entities.Place
+import br.com.bexs.domain.exception.NoPathException
+import br.com.bexs.domain.exception.RouteAlreadyExistsException
 import io.javalin.http.BadRequestResponse
 import io.javalin.http.Context
 import java.io.File

@@ -1,4 +1,4 @@
-package br.com.ebanx.domain.entities
+package br.com.bexs.domain.entities
 
 data class Place(val id: String): Comparable<Place> {
     override fun compareTo(other: Place): Int {

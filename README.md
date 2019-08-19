@@ -62,8 +62,8 @@ não é recomendado pois o console fica poluído com os outputs do gradle em mei
 * Gradle + Java
 
 Essa maneira separa o ```build``` da aplicação de sua execução. Para executar o build, deve-se executar:
-```./gradlew build ```. Será gerado o jar *ebanx-1.0.jar* na pasta ```build/libs```. Após isso, basta executar
-```java -Dport=8080 -jar build/libs/ebanx-1.0.jar input-routes.csv``` para a aplicação iniciar.
+```./gradlew build ```. Será gerado o jar *bexs-1.0.jar* na pasta ```build/libs```. Após isso, basta executar
+```java -Dport=8080 -jar build/libs/bexs-1.0.jar input-routes.csv``` para a aplicação iniciar.
 
 **Obs:** O parâmetro *port* é opcional e se não informado, usa a porta 7000.
 
@@ -73,10 +73,14 @@ Após a inicialização da aplicação, dois endpoints ficarão disponíveis.
 * **GET /best-route**  
 Recebe os *query params* **de** e **para** para informar a origem e destino.  
 Exemplo de chamada:  
-```curl -X GET 'http://localhost:7000/best-route?de=GRU&para=SCL'```
+```curl -X GET 'http://localhost:7000/best-route?de=GRU&para=SCL'```  
+Exemplo de resposta:
+```best route: GRU - BRC - SCL > $15```
 
 * **POST /register-route**  
 Recebe no body uma string no mesmo formato do arquivo CSV de entrada (pontoA,pontoB,custo) e registra essa nova rota para
 uso nas próximas consultas em ambas as interfaces.  
 Exemplo de chamada:  
-```curl -X POST 'http://localhost:7000/register-route' -d 'GRU,SCL,1'```
+```curl -X POST 'http://localhost:7000/register-route' -d 'GRU,SCL,1'```  
+Exemplo de resposta:
+```route added```

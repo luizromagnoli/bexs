@@ -1,11 +1,11 @@
-package br.com.ebanx.application
+package br.com.bexs.application
 
-import br.com.ebanx.application.controller.RoutesController
-import br.com.ebanx.domain.BestRoute
-import br.com.ebanx.domain.entities.Place
-import br.com.ebanx.domain.entities.ShortestPath
-import br.com.ebanx.domain.exception.NoPathException
-import br.com.ebanx.resources.InputParser
+import br.com.bexs.application.controller.RoutesController
+import br.com.bexs.domain.BestRoute
+import br.com.bexs.domain.entities.Place
+import br.com.bexs.domain.entities.ShortestPath
+import br.com.bexs.domain.exception.NoPathException
+import br.com.bexs.resources.InputParser
 import io.javalin.Javalin
 import kotlin.system.exitProcess
 

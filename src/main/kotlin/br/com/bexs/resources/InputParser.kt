@@ -1,7 +1,7 @@
-package br.com.ebanx.resources
+package br.com.bexs.resources
 
-import br.com.ebanx.domain.entities.Path
-import br.com.ebanx.domain.entities.Place
+import br.com.bexs.domain.entities.Path
+import br.com.bexs.domain.entities.Place
 import java.io.File
 
 object InputParser {

@@ -1,4 +1,4 @@
-package br.com.ebanx.domain.entities
+package br.com.bexs.domain.entities
 
 data class ShortestPath(val Place: List<Place>, val distance: Int) {
     override fun toString(): String {

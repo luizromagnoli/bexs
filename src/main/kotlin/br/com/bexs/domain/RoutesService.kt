@@ -1,6 +1,6 @@
-package br.com.ebanx.domain
+package br.com.bexs.domain
 
-import br.com.ebanx.domain.entities.Place
+import br.com.bexs.domain.entities.Place
 
 class RoutesService {
     fun bestRoute(bestRoute: BestRoute, from: Place, to: Place) = bestRoute.getShortestPath(from, to)

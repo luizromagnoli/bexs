@@ -1,9 +1,9 @@
-package br.com.ebanx.domain
+package br.com.bexs.domain
 
-import br.com.ebanx.domain.entities.Path
-import br.com.ebanx.domain.entities.Place
-import br.com.ebanx.domain.exception.NoPathException
-import br.com.ebanx.domain.exception.RouteAlreadyExistsException
+import br.com.bexs.domain.entities.Path
+import br.com.bexs.domain.entities.Place
+import br.com.bexs.domain.exception.NoPathException
+import br.com.bexs.domain.exception.RouteAlreadyExistsException
 import org.junit.Test
 
 class BestRouteTest {
